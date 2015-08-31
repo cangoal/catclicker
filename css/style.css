@@ -1,0 +1,45 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+
+h1{
+	padding:20px;
+	margin-left:40px;
+}
+
+div#main-container{
+	padding: 20px;
+}
+
+ul{
+	margin-left: 40px;
+	list-style: none;
+	width: 4em;
+	float: left;
+	vertical-align: top;
+	display: inline-block;
+}
+
+ul a{
+	display: block;
+	text-decoration: none;
+	font-size: x-large;
+	background-color: #6DA203;
+	border:1px #486B02 ridge;
+	padding-left:0.5em;
+}
+
+a:hover, a:focus{
+	color:white;
+}
+
+div#cat-detail{
+	display:inline-block;
+	margin-left:100px;
+}
+
+img{
+	width:600px;
+	height:400px;
+}

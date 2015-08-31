@@ -1,0 +1,27 @@
+<! doctype html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Cat Clicker</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h1>Cat Clicker Demo</h1>
+	<div id="main-container">
+		<ul id="cat-list"></ul>
+		<div id="cat-detail"></div>
+	</div>
+
+	<script type="text/template" data-template = "cat">
+		<a href="#" class="cat-link"><li>{{name}}</li></a>
+	</script>
+
+	<script type="text/template" data-template = "cat-detail">
+		<img src="{{imgUrl}}"/><br>
+		<span>Display: {{name}}</span><br>
+		<span>Clicks: {{count}}</span>
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
