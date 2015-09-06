@@ -46,6 +46,11 @@ var octopus={
 		view.renderCatDetail();
 	},
 
+	increaseCatClicks: function(){
+		var activeCat = this.getActiveCat();
+		activeCat.count++;
+	},
+
 	init: function(){
 		view.init();
 	}
@@ -57,6 +62,18 @@ var view={
 		this.catListTemplate = $('script[data-template="cat"]').html();
 		this.$catDetail = $('#cat-detail');
 		this.catDetailTemplate = $('script[data-template="cat-detail"]').html();
+
+		// choose different cat to view
+		this.$catList.on('click', '.cat-link', function(e){
+			var catName = $(this).find('li').text();
+			octopus.viewActiveCat(catName);
+		}); 
+
+		// Delegeted event to listen for cat clicks
+		this.$catDetail.on('click', '.cat-image', function(e){
+			octopus.increaseCatClicks();
+			view.renderCatDetail();
+		});
 
 		this.render();
 	},
@@ -73,12 +90,6 @@ var view={
 		octopus.getCatList().forEach(function(cat){
 			var thisCat = catListTemplate.replace(/{{name}}/g, cat.name);
 			$catList.append(thisCat);
-		});
-
-		// choose different cat to view
-		this.$catList.on('click', '.cat-link', function(e){
-			var catName = $(this).find('li').text();
-			octopus.viewActiveCat(catName);
 		});
 	},
 
